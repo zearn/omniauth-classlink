@@ -26,6 +26,13 @@ module OmniAuth
         end
       end
 
+      def token_params
+        super.tap do |params|
+          params[:grant_type] = :authorization_code
+          params[:redirect_uri] = callback_url
+        end
+      end
+
       info do
         {
           first_name: raw_info['FirstName'],
