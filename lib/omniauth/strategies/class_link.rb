@@ -22,7 +22,6 @@ module OmniAuth
         super.tap do |params|
           params[:scope] = [:email, :profile].join(" ")
           params[:response_type] = :code
-          params[:grant_type] = :authorization_code
         end
       end
 
