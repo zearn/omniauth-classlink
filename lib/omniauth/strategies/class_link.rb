@@ -56,6 +56,7 @@ module OmniAuth
 
       def callback_url
         # You can overwrite it for development purposes
+        # Must omit query string
         options[:redirect_uri] || full_host + callback_path
       end
     end
